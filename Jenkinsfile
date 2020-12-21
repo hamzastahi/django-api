@@ -3,7 +3,7 @@ pipeline {
           label'master'
 	}	
     stages {
-	stage("http--service") {
+	stage("http--service1") {
 	
 	parallel {
 	 stage("build") {
