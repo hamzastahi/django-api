@@ -20,16 +20,17 @@ pipeline {
                   '''
 			 }
 			}
-	  stage("test script") {
+	  
+		}
+       
+	}
+	stage("test script") {
 	   steps {
 		 sh '''
 	         python3 test-http.py
                   '''
 			 }
 			}
-		}
-       
-	}
    }
 }
     
