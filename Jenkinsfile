@@ -20,7 +20,7 @@ pipeline {
                   '''
 			 }
 			}
-	  stage("Runing docker-compose") {
+	  stage("test script") {
 	   steps {
 		 sh '''
 	         python3 test-http.py
