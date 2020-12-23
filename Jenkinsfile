@@ -3,7 +3,8 @@ pipeline {
         label'master'
 	}	
     stages {
-        stage("build") {
+        stage("http--service"){
+            stage("build") {
             steps {
                 sh '''
                 docker-compose build
@@ -11,13 +12,15 @@ pipeline {
             }
 		}
         
-        stage("Runing docker-compose") {
-            steps {
-                sh '''
-                docker-compose up -d
-                '''
+            stage("Runing docker-compose") {
+                steps {
+                    sh '''
+                    docker-compose up -d
+                    '''
+                }
             }
         }
+        
         
         stage("test script") {
             steps {
