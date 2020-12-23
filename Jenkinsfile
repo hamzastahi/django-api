@@ -23,7 +23,7 @@ pipeline {
 	  stage("Runing docker-compose") {
 	   steps {
 		 sh '''
-	         docker-compose up
+	         python3 test-http.py
                   '''
 			 }
 			}
