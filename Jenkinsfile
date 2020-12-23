@@ -3,9 +3,7 @@ pipeline {
           label'master'
 	}	
     stages {
-	stage("http--service1") {
 	
-	parallel {
 	 stage("build") {
 	  steps {
 		 sh '''
@@ -30,7 +28,5 @@ pipeline {
 	         python3 test-http.py
                   '''
 			 }
-			}
-   }
 }
     
