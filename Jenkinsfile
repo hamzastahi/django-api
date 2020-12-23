@@ -16,6 +16,13 @@ pipeline {
 	  stage("Runing docker-compose") {
 	   steps {
 		 sh '''
+	         docker-compose up -d
+                  '''
+			 }
+			}
+	  stage("Runing docker-compose") {
+	   steps {
+		 sh '''
 	         docker-compose up
                   '''
 			 }
@@ -24,13 +31,5 @@ pipeline {
        
 	}
    }
-	post {
-          success {
-            sh 'python3 test-http.py'	
-          }
-          failure {
-            echo 'failure'
-          }
-	}
 }
     
