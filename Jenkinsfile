@@ -17,20 +17,19 @@ pipeline {
 	   steps {
 		 sh '''
 	         docker-compose up
-		 python3 test-http.py
                   '''
 			 }
-			}
-	  stage("test") {
-	   steps {
-		sh '''
-	        echo 'helloworld'
-		'''
-				}
 			}
 		}
        
 	}
    }
+	post {
+          success {
+            sh 'python3 test-http.py'	
+          }
+          failure {
+            echo 'failure'
+          }
 }
     
